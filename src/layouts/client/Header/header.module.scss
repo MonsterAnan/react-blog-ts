@@ -1,0 +1,97 @@
+header.normal {
+  color: #fff;
+  transition-duration: 0.3s;
+  a {
+    transition-duration: 0.3s;
+    color: #fff;
+  }
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.lgLogo {
+  font-size: 2.4rem;
+}
+.smLogo {
+  font-size: 6.4rem;
+  height: 100%;
+  overflow: hidden;
+}
+.blogName {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+.github {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.225s;
+}
+.github {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  border: 0;
+  svg {
+    color: darkgray;
+    fill: rgba($color: #000000, $alpha: 0.2);
+    height: 64px;
+    width: 64px;
+    transition-duration: 0.3s;
+  }
+}
+
+header.fixbar {
+  // background-color: rgba($color: #fff, $alpha: 0.2);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  .github {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+header.dark {
+  background-color: rgba(255, 255, 255, 0.72);
+  color: #333;
+  a {
+    color: #333;
+  }
+  .github > svg {
+    color: #333;
+    fill: rgb(243, 243, 243);
+  }
+}
+.titleLink {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    background: #fff;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    -webkit-transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
+  &:hover::after {
+    left: 140%;
+    -webkit-transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}

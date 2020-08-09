@@ -1,0 +1,30 @@
+.container {
+  overflow: hidden;
+  min-height: 1000px;
+  padding-top: 40px;
+}
+
+.card {
+  position: relative;
+  z-index: 20;
+  background-color: #fff;
+}
+.catalog {
+  width: 200px;
+  margin-left: 20px;
+  color: #a3a3a3;
+  border-top: 1px solid #eee;
+  padding: 10px 0 0 20px;
+  &.fixed {
+    position: fixed;
+    top: 80px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.catalog {
+  h3 {
+  }
+}
