@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 // 检查状态码
-function checkStatus(res) {
+function checkStatus(res:any) {
   // 结束
   if (res.status === 200 || res.status === 304) {
     return res.json();
@@ -13,18 +13,18 @@ function checkStatus(res) {
 }
 
 // 检查CODE值
-function checkCode(resData) {
+function checkCode(resData:any ) {
   if (resData.code === 0) {
     toast(resData.msg);
   }
 
   return resData;
 }
-function formatParam(url, params) {
+function formatParam(url:string, params?:any) {
   if (!params) {
     return url;
   }
-  let paramsArray = [];
+  let paramsArray:any  = [];
   //拼接参数
   Object.keys(params).forEach((key) =>
     paramsArray.push(key + "=" + params[key])
@@ -36,7 +36,7 @@ function formatParam(url, params) {
     return (url += "&" + paramsArray.join("&"));
   }
 }
-export function GET(url, params) {
+export function GET(url:string, params?:any) {
   if (!url) return;
 
   return fetch(formatParam(url, params), {
@@ -50,7 +50,7 @@ export function GET(url, params) {
 }
 // post方式
 //put 修改
-export function POST(url, data) {
+export function POST(url:string, data?:any) {
   if (!url) return;
   return fetch(url, {
     method: "POST",
@@ -67,7 +67,7 @@ export function POST(url, data) {
 }
 
 //put 修改
-export function PUT(url, data) {
+export function PUT(url:string, data?:any) {
   if (!url) return;
   return fetch(url, {
     method: "PUT",
@@ -84,7 +84,7 @@ export function PUT(url, data) {
 }
 
 //delete
-export function DEL(url, params) {
+export function DEL(url:string, params?:any) {
   if (!url) return;
   return fetch(formatParam(url, params), {
     method: "DELETE",
