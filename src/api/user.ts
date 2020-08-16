@@ -9,7 +9,7 @@ const api = {
  * Get User Info
  * @param {token} params 
  */
-export  function getUserInfo (params) {
+export  function getUserInfo (params:object) {
 
     return GET(api.getUserInfo, params);
 }
@@ -18,7 +18,7 @@ export  function getUserInfo (params) {
  * Get User List
  * @param {keywod,pageindex,pagesize} params 
  */
-export  function getUserList (params) {
+export  function getUserList (params:object) {
 
     return GET(api.user,params);
 }
@@ -27,7 +27,7 @@ export  function getUserList (params) {
  * Add User for UserList
  * @param {paramsData} params 
  */
-export  function addUserList (params) {
+export  function addUserList (params:object) {
 
     return POST(api.user, params);
 }
@@ -36,7 +36,7 @@ export  function addUserList (params) {
  * Edit User for UserList
  * @param {paramsData} params 
  */
-export  function updateUserList (params) {
+export  function updateUserList (params:object) {
     
     return PUT(api.user, params);
 }
@@ -45,7 +45,7 @@ export  function updateUserList (params) {
  * Delete User for UserList
  * @param {paramsData} params 
  */
-export  function delUserList (params) {
+export  function delUserList (params:object) {
     
     return DEL(api.user, params);
 }

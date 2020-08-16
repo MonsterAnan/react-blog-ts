@@ -2,7 +2,7 @@ import { GET, POST,PUT,DEL } from "../utils/http"
 
 const api = {
     article: '/api/admin/article',
-    update:(id)=> `/api/admin/article/${id}`
+    update:(id:string)=> `/api/admin/article/${id}`
 }
 
 
@@ -10,7 +10,7 @@ const api = {
  * Get Article List
  * @param {keywod,pageindex,pagesize} params 
  */
-export  function getArticleList (params) {
+export  function getArticleList (params:object) {
 
     return GET(api.article,params);
 }
@@ -19,7 +19,7 @@ export  function getArticleList (params) {
  * Add Article for ArticleList
  * @param {paramsData} params 
  */
-export  function addArticleList (params) {
+export  function addArticleList (params:object) {
 
     return POST(api.article, params);
 }
@@ -28,7 +28,7 @@ export  function addArticleList (params) {
  * Edit Article for ArticleList
  * @param {paramsData} params 
  */
-export  function updateArticleOne (id,params) {
+export  function updateArticleOne (id:string,params:object) {
     
     return PUT(api.update(id), params);
 }
@@ -37,7 +37,7 @@ export  function updateArticleOne (id,params) {
  * Delete Article for ArticleList
  * @param {paramsData} params 
  */
-export  function delArticleList (params) {
+export  function delArticleList (params:object) {
     
     return DEL(api.article, params);
 }

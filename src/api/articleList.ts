@@ -9,7 +9,7 @@ const api = {
  * Get Article List
  * @param {keywod,pageindex,pagesize} params 
  */
-export  function getArticleList (params) {
+export  function getArticleList (params:object) {
 
     return GET(api.article,params);
 }

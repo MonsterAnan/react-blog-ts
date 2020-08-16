@@ -4,7 +4,7 @@ const api = {
     swiper: '/api/article/swiper',
     recommend: '/api/article/recommend',
     getArticle:'/api/article/list',
-    articleDetail:(id)=> `/api/article/detail/${id}`
+    articleDetail:(id:string)=> `/api/article/detail/${id}`
 }
 
 
@@ -12,7 +12,7 @@ const api = {
  * Get Article List
  * @param {pageindex,pagesize} params 
  */
-export  function getSwiper (params) {
+export  function getSwiper (params:object) {
 
     return GET(api.swiper,params);
 }
@@ -21,7 +21,7 @@ export  function getSwiper (params) {
  * Get Article List
  * @param {pageindex,pagesize} params 
  */
-export  function getArticle (params) {
+export  function getArticle (params:object) {
 
     return GET(api.getArticle,params);
 }
@@ -29,7 +29,7 @@ export  function getArticle (params) {
  * Get Article List
  * @param {pageindex,pagesize} params 
  */
-export  function getRecommend (params) {
+export  function getRecommend (params:object) {
 
     return GET(api.recommend,params);
 }
@@ -37,7 +37,7 @@ export  function getRecommend (params) {
  * Get Article List
  * @param {pageindex,pagesize} params 
  */
-export  function articleDetail (id) {
+export  function articleDetail (id:string) {
 
     return GET(api.articleDetail(id));
 }
