@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker'
 import IndexApp from './layouts'
 import { Provider } from 'react-redux'
 import store from './redux/index'
-
+console.log(process.env.NODE_ENV)
 ReactDOM.render(
   <Provider store={store}>
     <IndexApp />

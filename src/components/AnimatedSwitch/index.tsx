@@ -3,7 +3,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Route, Switch } from "react-router-dom";
 import "./AnimatedSwitch.scss";
 
-const AnimatedSwitch = (props) => {
+const AnimatedSwitch = (props:any) => {
   const { children } = props;
   return (
     <Route
