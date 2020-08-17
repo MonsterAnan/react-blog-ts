@@ -1,7 +1,9 @@
 import React from 'react'
 import style from "./Loading.module.scss"
 import clsx from "clsx";
-export default function LoadingComponent(isLoading, error) {
+
+
+export default function LoadingComponent(isLoading:boolean, error:boolean) {
   // Handle the loading state
   if (isLoading) {
     return (

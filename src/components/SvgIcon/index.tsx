@@ -1,7 +1,10 @@
 import React from "react";
 import style from "./icon.module.scss";
 
-export default function Icon(props) {
+interface Iprops {
+  use: string;
+}
+export default function Icon(props:Iprops) {
   return (
     <>
       <svg className={style.svg} aria-hidden="true">

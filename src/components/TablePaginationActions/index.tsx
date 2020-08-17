@@ -1,5 +1,5 @@
 import IconButton from "@material-ui/core/IconButton";
-import React from "react";
+import React,{MouseEvent } from "react";
 import PropTypes from "prop-types";
 import FirstPageIcon from "@material-ui/icons/FirstPage";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
@@ -14,26 +14,31 @@ const useStyles1 = makeStyles((theme) => ({
     },
   }));
   
+  interface Iprops {
+    count: number;
+    page: number;
+    rowsPerPage: number;
+    onChangePage: any;
+  }
 
-
-export default function TablePaginationActions(props) {
+export default function TablePaginationActions(props:Iprops) {
     const classes = useStyles1();
     const theme = useTheme();
     const { count, page, rowsPerPage, onChangePage } = props;
   
-    const handleFirstPageButtonClick = (event) => {
+    const handleFirstPageButtonClick = (event:MouseEvent ) => {
       onChangePage(event, 0);
     };
   
-    const handleBackButtonClick = (event) => {
+    const handleBackButtonClick = (event:MouseEvent) => {
       onChangePage(event, page - 1);
     };
   
-    const handleNextButtonClick = (event) => {
+    const handleNextButtonClick = (event:MouseEvent) => {
       onChangePage(event, page + 1);
     };
   
-    const handleLastPageButtonClick = (event) => {
+    const handleLastPageButtonClick = (event:MouseEvent) => {
       onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
     };
   

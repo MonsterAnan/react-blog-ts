@@ -1,23 +1,22 @@
-import React from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Route, Switch } from "react-router-dom";
-import "./AnimatedSwitch.scss";
+import React, { ReactNode } from 'react'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { Route, Switch } from 'react-router-dom'
+import './AnimatedSwitch.scss'
 
-
-interface TransitionProps {
-  type: string;
-  duration: number;
-  children:any;
+interface Iprops {
+  type: string
+  duration: number
+  children: ReactNode
 }
-const AnimatedSwitch = (props:TransitionProps) => {
-  const { children } = props;
+const AnimatedSwitch = (props: Iprops) => {
+  const { children } = props
   return (
     <Route
       render={({ location }) => (
         <TransitionGroup component={null}>
           <CSSTransition
             key={location.key}
-            classNames={props.type || "fade"}
+            classNames={props.type || 'fade'}
             timeout={props.duration || 300}
           >
             <Switch location={location}>{children}</Switch>
@@ -25,7 +24,7 @@ const AnimatedSwitch = (props:TransitionProps) => {
         </TransitionGroup>
       )}
     />
-  );
-};
+  )
+}
 
-export default AnimatedSwitch;
+export default AnimatedSwitch
