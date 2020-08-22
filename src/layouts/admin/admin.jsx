@@ -6,7 +6,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {Drawer,AppBar,Toolbar,List,Typography,Divider,IconButton,Badge,Container} from "@material-ui/core";
-
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -101,12 +100,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 getUserInfo({ token: getToken() }).then((res) => {
   if (res && res.code === 1) {
     store.dispatch(setUser(res.data));
   }
 });
-function Admin(props) {
+function Admin() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
